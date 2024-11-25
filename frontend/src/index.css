@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#1a1a1a] text-white antialiased;
+  }
+}
+
+@layer components {
+  .game-card {
+    @apply relative overflow-hidden transition-all duration-300 rounded-3xl hover:scale-105;
+  }
+  
+  .game-card::before {
+    content: '';
+    @apply absolute inset-0 z-10 bg-gradient-to-t from-black/80 to-transparent;
+  }
+  
+  .action-card {
+    @apply relative p-8 overflow-hidden transition-all duration-300 cursor-pointer rounded-3xl hover:scale-105;
+  }
+
+  .action-card::before {
+    content: '';
+    @apply absolute inset-0 transition-opacity duration-300 opacity-0;
+  }
+
+  .action-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-icon {
+    @apply p-2 transition-colors rounded-full hover:bg-white/10;
+  }
+}
